@@ -18,4 +18,4 @@ Github Blog Pages를 앞으로도 자주 쓸텐데 사용하는 방법을 정리
 Start Command Prompt with Ruby --> `bundle exec jekyll serve`
 
 3. 블로그 포스팅   
-vscode 에서 cmd --> `git add .` --> `git commit -m (커밋 메시지)`
+vscode 에서 cmd --> `git add .` --> `git commit -m (커밋 메시지)` --> `git push -u origin master`
