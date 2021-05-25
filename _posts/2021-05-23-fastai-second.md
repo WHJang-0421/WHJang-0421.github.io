@@ -11,6 +11,9 @@ toc: true
 
 ---
 Fast AI 2강에서 이론적인 부분을 정리한 것이다.
+
+** 책을 보고 좀 더 자세히 정리한 내용을 https://whjang-0421.github.io/ai/fastai-second-revised/에 정리해두었다. 3강부터는 책 내용을 보고 정리한 내용과 동영상 강의를 본 내용을 함께 정리해 두려고 한다.
+
 ## 1. The State of Machine Learning
 [State of Machine Learning](assets/images/state_machinelearning.PNG)
 - 흥미로운 점은 머신러닝이 대화에는 별로 성능이 좋지 않다는 것이다. 즉, 머신러닝을 통해 뭔가 대화처럼 보이는 것을 만들 수는 있지만 실제로 사실인 말을 하게 만들 수는 없다는 점이다.
