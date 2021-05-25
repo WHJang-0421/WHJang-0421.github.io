@@ -1,5 +1,5 @@
 ---
-title:  "Fast AI - Lesson 2"
+title:  "Fast AI - Lesson 2 Revised"
 excerpt: ""
 
 categories:
