@@ -33,7 +33,7 @@ toc: true
 몇몇 참고할 추천할 만한 블로그들이 있어 하이퍼링크를 걸어본다.    
 [Rachel Thomas의 블로그](https://medium.com/@racheltho)      
 [우아한 형제들 기술 블로그](https://woowabros.github.io/)    
-[개발자 준비생 블로그](https://wayhome25.github.io/til/2017/08/14/TIL-for-6-months/) 이 사람은 블로그 덕분에 취업한 사례다.
+[개발자 준비생 블로그](https://wayhome25.github.io/til/2017/08/14/TIL-for-6-months/) - 이 사람은 블로그 덕분에 취업한 사례다.
 
 ## 마무리
 오늘 글의 마무리는 글쓰기의 중요성을 보여주는 경구로 하겠다.

@@ -97,7 +97,7 @@ author:
   name             : "WHJang"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an **amazing** person."
-  location         : "모현면의 명문 시골학교"
+  location         :
   email            :
   links:
     - label: "Email"
