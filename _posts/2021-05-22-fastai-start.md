@@ -55,7 +55,9 @@ environment
     * `shift` + `m`: 선택한 셀들을 병합
 
 3. 유용한 커맨드
-    * `?(함수이름)`: 실행하면 docstring을 보여준다
+    * `?(함수이름)`: 실행하면 docstring을 보여준다.
+    * `??(함수이름)`: 실행하면 docstring + 소스코드를 보여준다.
+    * `doc(함수이름)`: fastai 한정. 실행하면 docstring + doc로 가는 링크를 보여준다.
     * `shift` + `tab`: 바로 함수의 docstring을 보여준다
     * `%`: inline commands
     * `%matplotlib inline`: matplotlib 출력결과가 출력 셀 내에 있고 노트북에 저장된다.
