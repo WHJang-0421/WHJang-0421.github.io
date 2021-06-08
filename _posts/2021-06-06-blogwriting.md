@@ -24,7 +24,7 @@ toc: true
 ### 1. 블로그 만들기
 일단 블로그를 만들어야 글을 쓸 수 있다. 추천하는 블로그는 Github Pages 블로그이다 (이 블로그도 Github Pages 블로그이다). Github Pages는 정적 블로그라는 방식을 이용해서 여러 플랫폼 사이를 오갈 수 있고 커스터마이징도 자유로우며 쉽다. 자세한 내용은 [이 사람의 블로그](https://devinlife.com/howto/)를 참고하자.
 
-[Github Pages 사진](/assets/images/github-pages.PNG)
+[Github Pages 사진](/assets/images/github-pages.png)
 
 ### 2. 글쓰기 요령
 - 어제의 나에게 도움이 되는 글을 쓰자. 이 조언은 fastai의 설립자 Rachel Thomas에게서 들은 조언인데, 너무 전문적인 글을 쓰려고 하는 것보다 자신의 수준에 맞는 글을 쓰려는 것이 좋다. 전문가들은 오히려 초보자들의 상태를 잘 모르기 때문에, 오히려 이들보다 다른 초보자의 블로그 포스트가 더 도움이 된다.
