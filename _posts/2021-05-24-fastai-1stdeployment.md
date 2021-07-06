@@ -3,7 +3,8 @@ title:  "Fast AI - Simple Cat Classifier"
 excerpt: "간단한 CNN 모델 만들어보기"
 
 categories:
-  - AI
+  - ai
+  - fastai
 tags:
   - AI
 

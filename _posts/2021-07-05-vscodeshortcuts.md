@@ -1,9 +1,10 @@
 ---
 title:  "VSCode 유용한 작업 및 단축키 정리"
 excerpt: ""
-
+categories:
+  - vscode
 tags:
-  - VSCode
+  - vscode
   - shortcuts
   - 단축키
 

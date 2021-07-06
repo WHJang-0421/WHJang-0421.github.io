@@ -3,7 +3,8 @@ title:  "Fast AI - Lesson 2"
 excerpt: ""
 
 categories:
-  - AI
+  - ai
+  - fastai
 tags:
   - AI
 
