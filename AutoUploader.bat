@@ -1,32 +1,32 @@
 :: CopyRights 2021 DH&WH Collaboration
 @echo off
-@title "¿ìÇõÀÌÀÇ Life Story"
+@title "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Life Story"
 @color 06
 
 :: yy-mm-dd
 set todaydate=%date%
-set path=C:\code_temp\WHJang-0421.github.io
-set target=%path%\_posts\%todaydate%-TIL.md
-set afterUpload=%path%\Uploaded\%todaydate%-TIL.md
+set filepath=C:\code_temp\WHJang-0421.github.io
+set target=%filepath%\_posts\%todaydate%-TIL.md
+set afterUpload=%filepath%\Uploaded\%todaydate%-TIL.md
 echo %target%
 
 if exist %target% (
 	color 0a
 	echo ==============================
-	echo %target% ÆÄÀÏÀÌ ÀÖÀ¸¹Ç·Î ¾÷·ÎµåÇÕ´Ï´Ù!
-	:: ÀÌ ±¸¿ª ¸í·É¾î´Â ´Ï°¡ ¼³Á¤ÇÑ°Å, ÆÄÀÏ °æ·Î´Â %target%À¸·Î ÅëÀÏ
+	echo %target% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½Õ´Ï´ï¿½!
+	:: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½É¾ï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ°ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Î´ï¿½ %target%ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	git add %target%
 	git commit -m "Add TIL post for today"
 	git push -u origin master
 	::
 	move %target% %afterUpload%
-	echo ÆÄÀÏ ÀÌµ¿±îÁö ¼º°ø. ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.
+	echo ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 	echo ==============================
 	pause
 ) else (
 	color 0c
 	echo ==============================
-	echo ÆÄÀÏ Ã£±â ½ÇÆÐ:( ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.
+	echo ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½:( ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 	echo ==============================
 	pause
 )

@@ -38,6 +38,12 @@ layout: single
 **TIL**  
     **|---**
 [2021.06 3주차 TIL]({{ site.baseurl }}{% link _posts/2021-06-12-TIL.md %})  
+    **|---**
+[2021.07.06 TIL]({{ site.baseurl }}{% link _posts/2021-07-06-TIL.md %})  
+    **|---**
+[2021.07.10 TIL]({{ site.baseurl }}{% link _posts/2021-07-10-TIL.md %})  
+    **|---**
+[2021.07.16 TIL]({{ site.baseurl }}{% link _posts/2021-07-16-TIL.md %})  
 **|---**
 **python**  
     **|---**
@@ -46,3 +52,11 @@ layout: single
 **vscode**  
     **|---**
 [VSCode 유용한 작업 및 단축키 정리]({{ site.baseurl }}{% link _posts/2021-07-05-vscodeshortcuts.md %})  
+**|---**
+**C**  
+    **|---**
+[C 프로그래밍 시작]({{ site.baseurl }}{% link _posts/2021-07-16-c-start.md %})  
+**|---**
+**books**  
+    **|---**
+[한 권으로 읽는 컴퓨터 구조와 프로그래밍]({{ site.baseurl }}{% link _posts/2021-07-16-the-secret-life-of-programs.md %})  
