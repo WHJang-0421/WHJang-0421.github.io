@@ -1,0 +1,47 @@
+I"<h2 id="1-wsl2-링크">1. WSL2 링크</h2>
+<p>WSL2는 Windows 환경에서 Linux를 가상머신 없이 사용할 수 있도록 한다. (나의 얄팍한 지식…) 사용해보니 정말 가상머신과는 비교가 안 되는 성능을 가지고 있다. 설명 대신 WSL2와 관련하여 내가 유용하게 찾은 링크들을 걸어놓겠다.</p>
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL2 설치: Microsoft 공식문서</a></li>
+  <li><a href="https://www.lesstif.com/software-architect/wsl-2-windows-subsystem-for-linux-2-89555812.html">WSL2에 대한 lesstif님의 글</a></li>
+</ul>
+
+<h2 id="2-wsl-관련-linux-명령어-정리">2. WSL 관련 (Linux) 명령어 정리</h2>
+<p>아무래도 Linux 환경에 익숙하지 않다 보니까 WSL2를 사용할 때 약간 헤맨다. Linux 환경에 대해 WSL2 사용에 필요한 만큼만 적어두자.</p>
+
+<h3 id="linux-file-system">Linux File System</h3>
+<p>Linux는 <code class="language-plaintext highlighter-rouge">/</code> (root directory)에서 파일구조가 시작된다. <code class="language-plaintext highlighter-rouge">/home</code> 또는 <code class="language-plaintext highlighter-rouge">~</code> 안에 User들의 폴더가 있고, 나의 경우 그 안에 <code class="language-plaintext highlighter-rouge">Projects</code> 폴더를 만들어 거기에 프로젝트를 저장하고 있다.</p>
+
+<p>권한</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">sudo</code>: 특정 작업은 특별한 권한이 필요하다. (Windows에서 관리자 권한 비슷한 느낌) 임의의 <code class="language-plaintext highlighter-rouge">command</code>를 <code class="language-plaintext highlighter-rouge">sudo</code> 권한으로 실행시키려면 <code class="language-plaintext highlighter-rouge">sudo command</code>하면 된다.</li>
+</ul>
+
+<p>파일 내비게이션</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cd</code>: change directory; 팁: <code class="language-plaintext highlighter-rouge">Tab</code>을 누르면 이름이 자동완성된다.</li>
+  <li><code class="language-plaintext highlighter-rouge">pwd</code>: print working directory</li>
+  <li><code class="language-plaintext highlighter-rouge">ls</code>: list; 폴더의 내용물 출력</li>
+</ul>
+
+<p>생성 및 삭제</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">mkdir</code>: make directory</li>
+  <li><code class="language-plaintext highlighter-rouge">rmdir</code>: remove directory (빈 경우만 가능)</li>
+  <li><code class="language-plaintext highlighter-rouge">rm</code>: remove</li>
+  <li><code class="language-plaintext highlighter-rouge">rm -r</code>: <code class="language-plaintext highlighter-rouge">-r</code> 옵션은 recursive로, 비어있지 않은 폴더의 내용물을 삭제해준다.</li>
+</ul>
+
+<p>파일 열기</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">nano</code>: 일단 지금은 이걸로 간단한 편집 작업을 수행할 예정이다. <code class="language-plaintext highlighter-rouge">nano filename</code>처럼 수행하면 된다.</li>
+  <li><code class="language-plaintext highlighter-rouge">code .</code>: 복잡한 작업은 VSCode로 진행할 예정이다. 뒤의 <code class="language-plaintext highlighter-rouge">.</code>은 현재 directory에서 열라는 이야기다.</li>
+</ul>
+
+<h3 id="wsl-시작-및-종료">WSL 시작 및 종료</h3>
+<ul>
+  <li>(Powershell에서 들어가자마자) <code class="language-plaintext highlighter-rouge">wsl</code>: wsl을 기본 배포판으로 시작한다.</li>
+  <li>(<code class="language-plaintext highlighter-rouge">wsl</code>을 친 다음에) <code class="language-plaintext highlighter-rouge">cd ~</code>: 처음에 들어가면 Working Directory가 <code class="language-plaintext highlighter-rouge">/mnt/(윈도우 경로)</code>의 꼴로 되어있다. 일반적으로 WSL에서 굳이 Window 파일에 접속하려 하지는 않으므로 home으로 가준다.</li>
+  <li>(WSL 실행중에) <code class="language-plaintext highlighter-rouge">exit</code>: 말 그대로 Linux Kernel에서 나간다. 평범한 Powershell로 돌아온다.</li>
+  <li>(나간 평범한 Powershell에서) <code class="language-plaintext highlighter-rouge">wsl --shutdown</code>: 말 그대로 돌아가던 WSL을 종료한다.</li>
+</ul>
+:ET

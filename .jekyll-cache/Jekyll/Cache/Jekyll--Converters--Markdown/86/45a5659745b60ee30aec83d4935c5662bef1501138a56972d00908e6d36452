@@ -1,0 +1,12 @@
+I"l<p><a href="https://www.tutorialspoint.com/cprogramming/index.htm">Tutorialspoint</a>의 강의로 C를 배우려고 한다.
+오늘은 Hello World 출력하고 기본적인 개념을 배웠다.</p>
+
+<h2 id="개념-정리">개념 정리</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">;</code>: statement terminator</li>
+  <li><code class="language-plaintext highlighter-rouge">/* */</code>: comments</li>
+  <li>identifiers: name of variable/function etc.</li>
+  <li>identifier naming rule: python과 동일. 처음에는 문자 + _, 그 다음에는 문자 + _ + 숫자</li>
+  <li>keywords</li>
+</ul>
+:ET
