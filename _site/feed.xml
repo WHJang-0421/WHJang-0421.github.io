@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-01T14:18:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">개발 놀이터</title><author><name>진화하는 개발자</name></author><entry><title type="html">2022.04.30 TIL</title><link href="http://localhost:4000/til/TIL/" rel="alternate" type="text/html" title="2022.04.30 TIL" /><published>2022-04-30T00:00:00+09:00</published><updated>2022-04-30T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/TIL/"><![CDATA[<p>정말 오랜만이다!! 바쁜 대학 생활중에 돌아왔다. ㅎ 이제 대학 생활도 어느정도 틀이 잡힌 것 같으니 꾸준히 개발 블로그를 다시 운영하려 한다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-02T01:58:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">개발 놀이터</title><author><name>진화하는 개발자</name></author><entry><title type="html">2022.05.01 TIL</title><link href="http://localhost:4000/til/TIL/" rel="alternate" type="text/html" title="2022.05.01 TIL" /><published>2022-05-01T00:00:00+09:00</published><updated>2022-05-01T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/TIL/"><![CDATA[<p>오늘 한 것은 다음과 같다.</p>
+<ul>
+  <li>실용주의 프로그래머 1장 5절 ‘지식 포트폴리오’ 정독</li>
+  <li>Linux에서 C 언어 개발에 필요한 패키지 설치</li>
+</ul>]]></content><author><name>진화하는 개발자</name></author><category term="TIL" /><category term="TIL" /><category term="blog" /><summary type="html"><![CDATA[오늘 내가 한 것]]></summary></entry><entry><title type="html">C의 기초</title><link href="http://localhost:4000/c/cbasics/" rel="alternate" type="text/html" title="C의 기초" /><published>2022-05-01T00:00:00+09:00</published><updated>2022-05-01T00:00:00+09:00</updated><id>http://localhost:4000/c/cbasics</id><content type="html" xml:base="http://localhost:4000/c/cbasics/"><![CDATA[<p>오늘은 Linux 환경에서 C 프로그램을 작성하면서, C의 기초 구문에 대해 공부할 것이다. <a href="https://dojang.io/">코딩 도장</a>을 기준으로 진행할 예정이다.</p>
+
+<h2 id="1-linux-환경에서-c-프로그램-작성-및-실행-1">1. Linux 환경에서 C 프로그램 작성 및 실행 [1]</h2>
+<ul>
+  <li>1) <code class="language-plaintext highlighter-rouge">$ sudo apt-get install build-essential</code>를 작성하여 필수적인 패키지를 다운로드 받는다.</li>
+  <li>2) 적당한 C 프로그램을 만들어서 <code class="language-plaintext highlighter-rouge">.c</code> 확장자로 저장한다.</li>
+  <li>3) <code class="language-plaintext highlighter-rouge">gcc [programName].c -o programName</code>을 터미널에서 실행하면, <code class="language-plaintext highlighter-rouge">programName</code>이라는 컴파일이 완료된 후 실행가능한 파일이 생긴다.</li>
+  <li>4) <code class="language-plaintext highlighter-rouge">./programName</code>으로 실행가능한 파일을 실행한다.</li>
+</ul>
+
+<h2 id="2-적절한-에디터-사용">2. 적절한 에디터 사용</h2>
+<ul>
+  <li>나는 일단 VSCode에서 작업할 것이고, 기본 C/C++ Extension만 사용한다. 뭐 기초적인 수준이니까.</li>
+</ul>
+
+<h2 id="3-c-언어의-기초-문법">3. C 언어의 기초 문법</h2>
+<h3 id="주석">주석</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">//</code>: 한 줄 주석 (<code class="language-plaintext highlighter-rouge">//</code> 이후로 다)</li>
+  <li><code class="language-plaintext highlighter-rouge">/* */</code>: 범위 주석 (<code class="language-plaintext highlighter-rouge">/*</code>와 <code class="language-plaintext highlighter-rouge">*/</code> 사이)</li>
+</ul>
+
+<h3 id="변수-선언-및-할당">변수 선언 및 할당</h3>
+<p><code class="language-plaintext highlighter-rouge">int a;</code>과 같이 변수를 선언하고, <code class="language-plaintext highlighter-rouge">a = 1;</code>과 같이 값을 할당한다. <code class="language-plaintext highlighter-rouge">int a = 1;</code>처럼 선언과 동시에 할당할 수 있다. <code class="language-plaintext highlighter-rouge">int a = 1, b = 2;</code>와 같이 자료형이 같은 경우 동시에 할 수 있다.</p>
+
+<h3 id="자료형">자료형</h3>
+<p>정수 자료형은 char와 int가 있고, (signed), unsigned 그리고 short, long을 붙인다. 지금 당장 기억할 것은 char: 1바이트 (8비트, -128<code class="language-plaintext highlighter-rouge">~</code>127), int: 4바이트 (32비트,-2^31 <code class="language-plaintext highlighter-rouge">~</code> 2^31)라는 것이다.</p>
+
+<h2 id="출처">출처</h2>
+<p>[1] <a href="https://vitux.com/how-to-write-and-run-a-c-program-in-linux/">https://vitux.com/how-to-write-and-run-a-c-program-in-linux/</a></p>]]></content><author><name>진화하는 개발자</name></author><category term="C" /><category term="C" /><category term="linux" /></entry><entry><title type="html">2022.04.30 TIL</title><link href="http://localhost:4000/til/TIL/" rel="alternate" type="text/html" title="2022.04.30 TIL" /><published>2022-04-30T00:00:00+09:00</published><updated>2022-04-30T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/TIL/"><![CDATA[<p>정말 오랜만이다!! 바쁜 대학 생활중에 돌아왔다. ㅎ 이제 대학 생활도 어느정도 틀이 잡힌 것 같으니 꾸준히 개발 블로그를 다시 운영하려 한다.
 어제, 오늘 한 것은 다음과 같다.</p>
 <ul>
   <li>실용주의 프로그래머 정독 및 내용 실천 방안</li>
@@ -97,222 +130,4 @@
 </ul>]]></content><author><name>진화하는 개발자</name></author><category term="TIL" /><category term="TIL" /><category term="blog" /><summary type="html"><![CDATA[오늘 내가 한 것]]></summary></entry><entry><title type="html">개발 관련 할 일</title><link href="http://localhost:4000/general/ideas/" rel="alternate" type="text/html" title="개발 관련 할 일" /><published>2021-07-05T00:00:00+09:00</published><updated>2021-06-15T00:00:00+09:00</updated><id>http://localhost:4000/general/ideas</id><content type="html" xml:base="http://localhost:4000/general/ideas/"><![CDATA[<p>여기는 개발 관련해서 해야 할 일들을 가볍게 정리하는 페이지이다.</p>
 <ul>
   <li>개발 관련 대회/공모전 알아보기</li>
-</ul>]]></content><author><name>진화하는 개발자</name></author><category term="general" /><category term="todo" /></entry><entry><title type="html">VSCode 유용한 작업 및 단축키 정리</title><link href="http://localhost:4000/vscode/vscodeshortcuts/" rel="alternate" type="text/html" title="VSCode 유용한 작업 및 단축키 정리" /><published>2021-07-05T00:00:00+09:00</published><updated>2021-06-15T00:00:00+09:00</updated><id>http://localhost:4000/vscode/vscodeshortcuts</id><content type="html" xml:base="http://localhost:4000/vscode/vscodeshortcuts/"><![CDATA[<p>시험 끝나고 다시 돌아와서 기쁘다. 오늘은 가볍게 VSCode 단축키를 정리해볼 예정이다.</p>
-
-<h2 id="1-peek">1. Peek</h2>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">F12</code>: 해당 클래스/함수가 있는 파일로 이동</li>
-  <li><code class="language-plaintext highlighter-rouge">F12</code> + <code class="language-plaintext highlighter-rouge">Alt</code>: 파일을 이동하지 않고 peek</li>
-</ul>
-
-<h2 id="2-renaming">2. Renaming</h2>
-<p>코드를 짜다 보면 클래스나 함수 이름을 바꿔야 할 때가 있다. 이때 함수가 어디에 사용되었는지 일일히 보면 당연히 비효율적이다.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">f</code>: Find &amp; Replace 기능을 이용하는 방법. 가장 초보적이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">F2</code>: 함수 클릭 후 <code class="language-plaintext highlighter-rouge">F2</code>를 누르면 프로젝트 내 모든 이름이 바뀐다.</li>
-</ul>
-
-<h2 id="3-debugging">3. Debugging</h2>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">F9</code>: Breakpoint 추가</li>
-  <li><code class="language-plaintext highlighter-rouge">F5</code>: 디버깅 시작</li>
-  <li><code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">F5</code>: 디버깅 종료</li>
-  <li><code class="language-plaintext highlighter-rouge">F5</code>: 디버깅 계속 진행 (다음 Breakpoint까지)</li>
-  <li><code class="language-plaintext highlighter-rouge">F10</code>: 건너뛰기</li>
-  <li><code class="language-plaintext highlighter-rouge">F11</code>: 함수 안으로 Step in</li>
-  <li><code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">F11</code>: 함수 밖으로 Step Out</li>
-</ul>
-
-<h2 id="4-그외-조작이동">4. 그외 조작/이동</h2>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">커서</code>: 멀티커서</li>
-  <li><code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">l</code>: 코드 하이라이트</li>
-  <li><code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">방향키</code>: 하이라이트 한 부분을 아래로 내림</li>
-  <li><code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">방향키</code>: 복사</li>
-  <li><code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">p</code>: 파일 검색 및 그 파일로 이동</li>
-  <li><code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">`</code>: 터미널 창 오픈</li>
-</ul>
-
-<h2 id="5-출처">5. 출처</h2>
-<p><a href="https://www.youtube.com/watch?v=mh-0twurNRE&amp;ab_channel=%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C">출처: https://www.youtube.com/watch?v=mh-0twurNRE&amp;ab_channel=%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C</a></p>]]></content><author><name>진화하는 개발자</name></author><category term="vscode" /><category term="vscode" /><category term="shortcuts" /><category term="단축키" /></entry><entry><title type="html">파이썬: 데코레이터</title><link href="http://localhost:4000/python/python-decorator/" rel="alternate" type="text/html" title="파이썬: 데코레이터" /><published>2021-06-15T00:00:00+09:00</published><updated>2021-06-15T00:00:00+09:00</updated><id>http://localhost:4000/python/python-decorator</id><content type="html" xml:base="http://localhost:4000/python/python-decorator/"><![CDATA[<h2 id="1-데코레이터의-소개">1. 데코레이터의 소개</h2>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bad_func_1</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"중복되는 기능"</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"func_1만의 기능"</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">bad_func_2</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"중복되는 기능"</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"func_2만의 기능"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>다음과 같은 코드는 무엇이 문제일까? 가장 큰 문제는 코드가 불필요하게 반복되고 있다는 것이다. 이런 식으로 코드를 짜면 재사용도 잘 안되고 func_1만 고치고 func_2는 고치는 것을 잊을 수도 있다.</p>
-
-<p>그러면 다음과 같이 코드를 짜면 좋을 것이다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_feature</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"중복된 기능"</span><span class="p">)</span>
-        <span class="n">func</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="k">def</span> <span class="nf">func_1</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"func_1만의 기능"</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">func_2</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"func_2만의 기능"</span><span class="p">)</span>
-
-<span class="n">add_feature</span><span class="p">(</span><span class="n">func_1</span><span class="p">)()</span>
-<span class="n">add_feature</span><span class="p">(</span><span class="n">func_2</span><span class="p">)()</span>
-</code></pre></div></div>
-<p>재사용이 잘 된 코드다. 여기서 파이썬은 <code class="language-plaintext highlighter-rouge">add_feature(func_1)</code> 대신에 데코레이터 구문을 쓸 수 있도록 하고 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_feature</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"중복된 기능"</span><span class="p">)</span>
-        <span class="n">func</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="o">@</span><span class="n">add_feature</span>
-<span class="k">def</span> <span class="nf">func_1</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"func_1만의 기능"</span><span class="p">)</span>
-
-<span class="o">@</span><span class="n">add_feature</span>
-<span class="k">def</span> <span class="nf">func_2</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"func_2만의 기능"</span><span class="p">)</span>
-
-<span class="n">func_1</span><span class="p">()</span>
-<span class="n">func_2</span><span class="p">()</span>
-</code></pre></div></div>
-
-<h2 id="2-데코레이터의-일반적인-구조">2. 데코레이터의 일반적인 구조</h2>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"some feature of the decorator"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="o">@</span><span class="n">decorator</span>
-<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-</code></pre></div></div>
-<ul>
-  <li>이것이 입력값과 출력값을 가진 함수에 데코레이터를 적용하는 방법이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">@decorator</code>는 기본적으로 <code class="language-plaintext highlighter-rouge">decorator(example_1)</code>과 같다는 것을 잊지 말자.</li>
-</ul>
-
-<p>한편, 복수의 데코레이터를 적용할 수도 있다. 이때 실행순서는 위의 데코레이터부터 실행된다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decorator1</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"decorator 1"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="k">def</span> <span class="nf">decorator2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"decorator 2"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="o">@</span><span class="n">decorator1</span>
-<span class="o">@</span><span class="n">decorator2</span>
-<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="c1"># decorator 1
-# decorator 2
-# 9
-</span></code></pre></div></div>
-
-<h2 id="3-functoolswraps">3. functools.wraps</h2>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"some feature of the decorator"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="o">@</span><span class="n">decorator</span>
-<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
-
-<span class="k">def</span> <span class="nf">example_2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">n</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">example_2</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
-</code></pre></div></div>
-<p>다음 예제를 실행해보자. 파이썬의 함수는 <code class="language-plaintext highlighter-rouge">__name__</code> 변수를 통해 정의될 당시의 이름을 저장하고 있다. 그래서 <code class="language-plaintext highlighter-rouge">f.__name__</code>을 실행하면 <code class="language-plaintext highlighter-rouge">example_2</code>가 나온다. 그런데 <code class="language-plaintext highlighter-rouge">example_1.__name__</code>의 값은 데코레이터에서 사용한 <code class="language-plaintext highlighter-rouge">wrapper</code>이다!</p>
-
-<p><strong>이처럼 데코레이터를 적용하면 함수 메타데이터가 바뀐다는 문제점이 있다.</strong> 이 문제점을 해결하기 위한 방법이 바로 <code class="language-plaintext highlighter-rouge">functools.wraps</code>를 이용하는 것이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
-
-<span class="k">def</span> <span class="nf">decorater</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    
-    <span class="o">@</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"some feature of the decorator"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="o">@</span><span class="n">decorater</span>
-<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
-
-<span class="k">def</span> <span class="nf">example_2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">n</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">example_2</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>바뀐 점은 <code class="language-plaintext highlighter-rouge">@wraps(func)</code>를 적용했다는 점 뿐이다. 그런데 example_1의 메타데이터가 사라지지 않고 제대로 남아있음을 알 수 있다.</p>
-
-<h2 id="4-클래스-형태의-데코레이터">4. 클래스 형태의 데코레이터</h2>
-<p>그렇게 자주 사용되지는 않지만 클래스 형태의 데코레이터도 있다. 클래스 형태의 데코레이터를 씌우면 나오는 객체는 클래스의 인스턴스이다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DecoratorClass</span><span class="p">():</span>
-    <span class="n">original_name</span> <span class="o">=</span> <span class="s">''</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">original_name</span> <span class="o">+=</span> <span class="n">func</span><span class="p">.</span><span class="n">__name__</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
-
-    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"some feature of the decorater"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="o">@</span><span class="n">DecoratorClass</span>
-<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">.</span><span class="n">original_name</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h2 id="5-데코레이터의-사용-예시">5. 데코레이터의 사용 예시</h2>
-<ul>
-  <li>유저가 로그인 상태가 아니면 로그인 페이지로 리다이렉트</li>
-  <li>로그 남기기</li>
-  <li>테스팅</li>
-</ul>
-
-<h2 id="6-참고자료">6. 참고자료</h2>
-<p><a href="http://schoolofweb.net/blog/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-decorator/">School Of Web</a>       <br />
-<a href="https://bluese05.tistory.com/30">Tistory 블로그</a>      <br />
-<a href="https://dojang.io/mod/page/view.php?id=2427">코딩 도장</a></p>]]></content><author><name>진화하는 개발자</name></author><category term="python" /><category term="TIL" /><category term="fastai" /></entry></feed>
+</ul>]]></content><author><name>진화하는 개발자</name></author><category term="general" /><category term="todo" /></entry></feed>
