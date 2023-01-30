@@ -118,4 +118,16 @@ var store = [{
         "tags": ["wsl","wsl2"],
         "url": "/links/WSL2/",
         "teaser": null
+      },{
+        "title": "2022.05.01 TIL",
+        "excerpt":"오늘 한 것은 다음과 같다.     실용주의 프로그래머 1장 5절 ‘지식 포트폴리오’ 정독   Linux에서 C 언어 개발에 필요한 패키지 설치  ","categories": ["TIL"],
+        "tags": ["TIL","blog"],
+        "url": "/til/TIL/",
+        "teaser": null
+      },{
+        "title": "C의 기초",
+        "excerpt":"오늘은 Linux 환경에서 C 프로그램을 작성하면서, C의 기초 구문에 대해 공부할 것이다. 코딩 도장을 기준으로 진행할 예정이다. 1. Linux 환경에서 C 프로그램 작성 및 실행 [1] 1) $ sudo apt-get install build-essential를 작성하여 필수적인 패키지를 다운로드 받는다. 2) 적당한 C 프로그램을 만들어서 .c 확장자로 저장한다. 3) gcc [programName].c -o programName을...","categories": ["C"],
+        "tags": ["C","linux"],
+        "url": "/c/cbasics/",
+        "teaser": null
       }]
