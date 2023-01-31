@@ -94,9 +94,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "진화하는 개발자"
+  name             : "평범한 개발자"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "점진적인 발전"
+  bio              : ""
   location         :
   email            :
   links:
