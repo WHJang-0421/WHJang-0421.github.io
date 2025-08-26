@@ -3,7 +3,8 @@ title:  "Fast AI - Lesson 1"
 excerpt: "소개 및 세팅, 첫번째 모델 제작"
 
 categories:
-  - AI
+  - ai
+  - fastai
 tags:
   - AI
 

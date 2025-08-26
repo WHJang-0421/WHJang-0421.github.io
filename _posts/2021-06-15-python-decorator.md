@@ -3,7 +3,7 @@ title:  "파이썬: 데코레이터"
 excerpt: ""
 
 categories:
-  - TIL
+  - python
 tags:
   - TIL
   - fastai

@@ -3,7 +3,8 @@ title:  "앞으로의 개발 계획"
 excerpt: "앞으로의 무엇을 공부할지"
 
 categories:
-  - Plans
+  - general
+  - plan
 tags:
   - Plans
 ---

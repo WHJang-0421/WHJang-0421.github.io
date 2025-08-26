@@ -3,7 +3,7 @@ title:  "minimal mistakes theme 정리"
 excerpt: "jekyll theme 인 minimal mistakes로 블로그 글쓰는 법 정리."
 
 categories:
-  - Blog
+  - general
 tags:
   - Blog
 last_modified_at: 2019-04-13T08:06:00-05:00
