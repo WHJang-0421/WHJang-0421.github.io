@@ -1,0 +1,803 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>파이썬: 데코레이터 - 개발 놀이터</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="진화하는 개발자">
+  
+  <meta property="article:author" content="진화하는 개발자">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="개발 놀이터">
+<meta property="og:title" content="파이썬: 데코레이터">
+<meta property="og:url" content="http://localhost:4000/python/python-decorator/">
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-06-15T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-06-15T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/python/python-decorator/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "진화하는 개발자",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="개발 놀이터 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          개발 놀이터
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">진화하는 개발자</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>점진적인 발전</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:morrranii@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/WHJang-0421" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="파이썬: 데코레이터">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2021-06-15T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-06-15T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">파이썬: 데코레이터
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#1-데코레이터의-소개">1. 데코레이터의 소개</a></li><li><a href="#2-데코레이터의-일반적인-구조">2. 데코레이터의 일반적인 구조</a></li><li><a href="#3-functoolswraps">3. functools.wraps</a></li><li><a href="#4-클래스-형태의-데코레이터">4. 클래스 형태의 데코레이터</a></li><li><a href="#5-데코레이터의-사용-예시">5. 데코레이터의 사용 예시</a></li><li><a href="#6-참고자료">6. 참고자료</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="1-데코레이터의-소개">1. 데코레이터의 소개</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bad_func_1</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"중복되는 기능"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"func_1만의 기능"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">bad_func_2</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"중복되는 기능"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"func_2만의 기능"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>다음과 같은 코드는 무엇이 문제일까? 가장 큰 문제는 코드가 불필요하게 반복되고 있다는 것이다. 이런 식으로 코드를 짜면 재사용도 잘 안되고 func_1만 고치고 func_2는 고치는 것을 잊을 수도 있다.</p>
+
+<p>그러면 다음과 같이 코드를 짜면 좋을 것이다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_feature</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"중복된 기능"</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="k">def</span> <span class="nf">func_1</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"func_1만의 기능"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func_2</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"func_2만의 기능"</span><span class="p">)</span>
+
+<span class="n">add_feature</span><span class="p">(</span><span class="n">func_1</span><span class="p">)()</span>
+<span class="n">add_feature</span><span class="p">(</span><span class="n">func_2</span><span class="p">)()</span>
+</code></pre></div></div>
+<p>재사용이 잘 된 코드다. 여기서 파이썬은 <code class="language-plaintext highlighter-rouge">add_feature(func_1)</code> 대신에 데코레이터 구문을 쓸 수 있도록 하고 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_feature</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"중복된 기능"</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="o">@</span><span class="n">add_feature</span>
+<span class="k">def</span> <span class="nf">func_1</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"func_1만의 기능"</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">add_feature</span>
+<span class="k">def</span> <span class="nf">func_2</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"func_2만의 기능"</span><span class="p">)</span>
+
+<span class="n">func_1</span><span class="p">()</span>
+<span class="n">func_2</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="2-데코레이터의-일반적인-구조">2. 데코레이터의 일반적인 구조</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"some feature of the decorator"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="o">@</span><span class="n">decorator</span>
+<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</code></pre></div></div>
+<ul>
+  <li>이것이 입력값과 출력값을 가진 함수에 데코레이터를 적용하는 방법이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">@decorator</code>는 기본적으로 <code class="language-plaintext highlighter-rouge">decorator(example_1)</code>과 같다는 것을 잊지 말자.</li>
+</ul>
+
+<p>한편, 복수의 데코레이터를 적용할 수도 있다. 이때 실행순서는 위의 데코레이터부터 실행된다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decorator1</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"decorator 1"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="k">def</span> <span class="nf">decorator2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"decorator 2"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="o">@</span><span class="n">decorator1</span>
+<span class="o">@</span><span class="n">decorator2</span>
+<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1"># decorator 1
+# decorator 2
+# 9
+</span></code></pre></div></div>
+
+<h2 id="3-functoolswraps">3. functools.wraps</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"some feature of the decorator"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="o">@</span><span class="n">decorator</span>
+<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
+
+<span class="k">def</span> <span class="nf">example_2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">example_2</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
+</code></pre></div></div>
+<p>다음 예제를 실행해보자. 파이썬의 함수는 <code class="language-plaintext highlighter-rouge">__name__</code> 변수를 통해 정의될 당시의 이름을 저장하고 있다. 그래서 <code class="language-plaintext highlighter-rouge">f.__name__</code>을 실행하면 <code class="language-plaintext highlighter-rouge">example_2</code>가 나온다. 그런데 <code class="language-plaintext highlighter-rouge">example_1.__name__</code>의 값은 데코레이터에서 사용한 <code class="language-plaintext highlighter-rouge">wrapper</code>이다!</p>
+
+<p><strong>이처럼 데코레이터를 적용하면 함수 메타데이터가 바뀐다는 문제점이 있다.</strong> 이 문제점을 해결하기 위한 방법이 바로 <code class="language-plaintext highlighter-rouge">functools.wraps</code>를 이용하는 것이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+
+<span class="k">def</span> <span class="nf">decorater</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    
+    <span class="o">@</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"some feature of the decorator"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="o">@</span><span class="n">decorater</span>
+<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
+
+<span class="k">def</span> <span class="nf">example_2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">example_2</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>바뀐 점은 <code class="language-plaintext highlighter-rouge">@wraps(func)</code>를 적용했다는 점 뿐이다. 그런데 example_1의 메타데이터가 사라지지 않고 제대로 남아있음을 알 수 있다.</p>
+
+<h2 id="4-클래스-형태의-데코레이터">4. 클래스 형태의 데코레이터</h2>
+<p>그렇게 자주 사용되지는 않지만 클래스 형태의 데코레이터도 있다. 클래스 형태의 데코레이터를 씌우면 나오는 객체는 클래스의 인스턴스이다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DecoratorClass</span><span class="p">():</span>
+    <span class="n">original_name</span> <span class="o">=</span> <span class="s">''</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">original_name</span> <span class="o">+=</span> <span class="n">func</span><span class="p">.</span><span class="n">__name__</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"some feature of the decorater"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">DecoratorClass</span>
+<span class="k">def</span> <span class="nf">example_1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">example_1</span><span class="p">.</span><span class="n">original_name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="5-데코레이터의-사용-예시">5. 데코레이터의 사용 예시</h2>
+<ul>
+  <li>유저가 로그인 상태가 아니면 로그인 페이지로 리다이렉트</li>
+  <li>로그 남기기</li>
+  <li>테스팅</li>
+</ul>
+
+<h2 id="6-참고자료">6. 참고자료</h2>
+<p><a href="http://schoolofweb.net/blog/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-decorator/">School Of Web</a>       <br />
+<a href="https://bluese05.tistory.com/30">Tistory 블로그</a>      <br />
+<a href="https://dojang.io/mod/page/view.php?id=2427">코딩 도장</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#fastai" class="page__taxonomy-item" rel="tag">fastai</a><span class="sep">, </span>
+    
+      <a href="/tags/#til" class="page__taxonomy-item" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-06-15">June 15, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%ED%8C%8C%EC%9D%B4%EC%8D%AC%3A+%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fpython-decorator%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fpython-decorator%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fpython-decorator%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/TIL/" class="pagination--pager" title="2021.06 3주차 TIL
+">Previous</a>
+    
+    
+      <a href="/general/ideas/" class="pagination--pager" title="개발 관련 할 일
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/links/WSL2/" rel="permalink">WSL2 and Linux
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/TIL/" rel="permalink">2022.04.30 TIL
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 내가 한 것
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/books/the-secret-life-of-programs/" rel="permalink">한 권으로 읽는 컴퓨터 구조와 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">The Secret Life of Programs: Understand Computers – Craft Better Code
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/c/c-start/" rel="permalink">C 프로그래밍 시작
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">시작이 반이다… 그런건가
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 진화하는 개발자. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

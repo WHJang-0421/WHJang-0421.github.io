@@ -1,0 +1,816 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Fast AI - Lesson 3: The Basics - 개발 놀이터</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="진화하는 개발자">
+  
+  <meta property="article:author" content="진화하는 개발자">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="개발 놀이터">
+<meta property="og:title" content="Fast AI - Lesson 3: The Basics">
+<meta property="og:url" content="http://localhost:4000/ai/fastai/fastai-third/">
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-25T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/ai/fastai/fastai-third/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "진화하는 개발자",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="개발 놀이터 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          개발 놀이터
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">진화하는 개발자</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>점진적인 발전</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:morrranii@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/WHJang-0421" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Fast AI - Lesson 3: The Basics">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2021-05-25T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Fast AI - Lesson 3: The Basics
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#1-키워드">1. 키워드</a></li><li><a href="#2-머신러닝의-기초적인-개념">2. 머신러닝의 기초적인 개념</a><ul><li><a href="#array--tensor">Array &amp; Tensor</a></li><li><a href="#l1-norm-l2-norm">L1 Norm, L2 Norm</a></li><li><a href="#weights-bias-parameters">Weights, Bias, Parameters</a></li><li><a href="#matrix-multiplication">Matrix Multiplication</a></li><li><a href="#activation-function">Activation Function</a></li></ul></li><li><a href="#3-딥러닝-모델의-구조">3. 딥러닝 모델의 구조</a></li><li><a href="#4-유용한-머신러닝-팁">4. 유용한 머신러닝 팁</a><ul><li><a href="#baseline-model을-구축하라">Baseline Model을 구축하라</a></li><li><a href="#중간중간-tensor의-shape를-확인해라">중간중간 tensor의 shape를 확인해라.</a></li><li><a href="#broadcasting을-이용해라">Broadcasting을 이용해라.</a></li></ul></li><li><a href="#5-유용한-pytorch-연산-정리">5. 유용한 Pytorch 연산 정리</a><ul><li><a href="#기본-연산">기본 연산</a></li><li><a href="#shpae-조정">shpae 조정</a></li><li><a href="#루프-대체">루프 대체</a></li><li><a href="#l1-norm-l2-norm-1">L1 Norm, L2 Norm</a></li><li><a href="#미분">미분</a></li><li><a href="#dataset-만들기">Dataset 만들기</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>블로그 포스트 다시 정리해서 써보기.</p>
+
+<p>이번 레슨은 머신러닝에서의 가장 기초적인 개념들에 대해 학습한다고 한다.</p>
+
+<h2 id="1-키워드">1. 키워드</h2>
+<ul>
+  <li>arrays, tensors, broadcasting</li>
+  <li>SGD (stochastic gradient descent)</li>
+  <li>loss function</li>
+  <li>mini batch</li>
+</ul>
+
+<h2 id="2-머신러닝의-기초적인-개념">2. 머신러닝의 기초적인 개념</h2>
+
+<h3 id="array--tensor">Array &amp; Tensor</h3>
+<ul>
+  <li>다차원으로 쌓은 상자들?의 이미지를 생각하면 될듯</li>
+  <li>rank: 몇개의 축을 가진 데이터인지 말해준다. 예를 들어 rank가 2이면 텐서들로 이루어진 텐서 꼴인 것이다.</li>
+  <li>shape: 각 축의 길이를 말해 준다. 예를 들어 [28, 28]은 28개의 row와 28개의 column을 가졌다는 것이고, [1010, 28, 28]은 28*28 정사각형이 1010개 쌓였다고 생각하면 된다.</li>
+</ul>
+
+<p><strong>Array 와 Tensor의 이점</strong></p>
+<ul>
+  <li>대체로 C로 컴파일된 메소드들을 가지고 있음: 빠르다</li>
+</ul>
+
+<p><strong>Numpy 와 Pytorch</strong></p>
+<ul>
+  <li>Numpy의 장점: 자유로운 형태를 가질 수 있다. 예를 들면 jagged array (array 안에 길이가 다른/type이 다른 array들이 있는 것). Pytorch는 숫자들로 구성된 길이가 같은 텐서들로 이루어져 있어야 한다. (그러니까 직사각형이나 큐브처럼 이루어져야 한다.)</li>
+  <li>Pytroch의 장점: numpy에는 없는 GPU와 미분 (back propagation) 지원이 있다.</li>
+</ul>
+
+<h3 id="l1-norm-l2-norm">L1 Norm, L2 Norm</h3>
+<ul>
+  <li>L1 Norm: 편차의 절댓값의 평균: <code class="language-plaintext highlighter-rouge">(x-y).abs().mean()</code></li>
+  <li>L2 Norm: 분산 (편차의 제곱의 평균에 루트를 씌운 것): <code class="language-plaintext highlighter-rouge">((x-y)**2).mean().sqrt().</code></li>
+  <li>물론 pytorch에서 L1, L2 Norm 관련 메소드가 있다. (아래 유용한 pytorch 연산 정리 참고)</li>
+  <li>L1 norm과 L2 norm의 차이: L2 norm은 L1에 비해 더 큰 오류에 민감하고 작은 오류에는 덜 민감하다</li>
+</ul>
+
+<h3 id="weights-bias-parameters">Weights, Bias, Parameters</h3>
+<ul>
+  <li>Parameters: 머신러닝 모델에서 트레이닝 하면서 변하는 것</li>
+  <li>Weight: y = w * x + b 에서 w</li>
+  <li>Bias: y = w * x + b 에서 b</li>
+</ul>
+
+<h3 id="matrix-multiplication">Matrix Multiplication</h3>
+<ul>
+  <li>y = w * x + b를 모든 트레이닝 데이터셋에 대해 for loop을 도는 대신, matrix multiplication을 이용하면 효율적이고 GPU를 이용할 수도 있어서 빠르다.</li>
+  <li>python 그리고 pytorch에서 matrix multiplication은 @로 나타낸다.</li>
+  <li><code class="language-plaintext highlighter-rouge">batch @ weight + bias</code></li>
+</ul>
+
+<h3 id="activation-function">Activation Function</h3>
+<ul>
+  <li>숫자들을 해당 분류에 해당할 확률? 같은 것으로 바꿔준다고 일단 이해했다.</li>
+  <li>sigmoid의 경우, y값이 0과 1사이에서 왔다갔다하는 커브이다.</li>
+</ul>
+
+<h2 id="3-딥러닝-모델의-구조">3. 딥러닝 모델의 구조</h2>
+<ol>
+  <li>Parameter 초기화
+    <ul>
+      <li>일반적으로 그냥 random으로 설정한다.</li>
+      <li>미리 훈련된 다른 모델에서 가져올 수도 있다 (transfer learning)</li>
+    </ul>
+  </li>
+  <li>Predict</li>
+  <li>Loss: 실제 레이블과 예측의 차이
+    <ul>
+      <li>미분가능한 함수여야 한다.</li>
+    </ul>
+  </li>
+  <li>Gradient: 각각의 parameter을 어떤 방향으로 바꿀지 계산하기 위해</li>
+  <li>Step(Gradient를 근거로)
+    <ul>
+      <li>step의 양은 gradient * lr (learning rate)</li>
+      <li>pytorch에서는 step을 한 뒤에 <code class="language-plaintext highlighter-rouge">parameters.grad = None</code>을 해줘야 한다. ? 왜?</li>
+    </ul>
+  </li>
+  <li>Repeat</li>
+  <li>Stop (특정 기준에 의해)
+    <ul>
+      <li>너무 오래 걸려서</li>
+      <li>모델이 충분히 좋아서 (metric이 특정 기준 이상)</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="4-유용한-머신러닝-팁">4. 유용한 머신러닝 팁</h2>
+
+<h3 id="baseline-model을-구축하라">Baseline Model을 구축하라</h3>
+<ul>
+  <li>종종 아주 멋진 모델보다 그냥 간단한 모델의 성능이 더 좋을 때가 있다.</li>
+  <li>그러므로 Baseline model을 구축하고 그 이후의 모든 시도들이 baseline model보다 더 좋은 성능을 보이도록 해야 한다.</li>
+  <li>baseline model을 구축할때는 정말 간단하고 짜기 쉬운 모델을 짜거나 기존에 다른 사람이 만든 모델을 이용할 수 있다.</li>
+</ul>
+
+<h3 id="중간중간-tensor의-shape를-확인해라">중간중간 tensor의 shape를 확인해라.</h3>
+<ul>
+  <li>shape가 이상해지면 좋을 것 없다.</li>
+</ul>
+
+<h3 id="broadcasting을-이용해라">Broadcasting을 이용해라.</h3>
+<ul>
+  <li>pytorch에서는 broadcasting을 이용하여 알아서 tensor의 차원을 확장시켜준다.</li>
+  <li>대부분의 loop는 broadcasting으로 대신할 수 있다.</li>
+  <li>Broadcasting은 C언어로/Cuda로 GPU에서 일어나므로 훨씬 빠르고, 메모리도 덜 사용한다.</li>
+  <li>broadcasting을 이용하면 여러 shape의 텐서를 입력으로 받아도 둘다 작동하는 함수를 만들 수 있따.</li>
+</ul>
+
+<h2 id="5-유용한-pytorch-연산-정리">5. 유용한 Pytorch 연산 정리</h2>
+
+<h3 id="기본-연산">기본 연산</h3>
+<ul>
+  <li>생성: <code class="language-plaintext highlighter-rouge">tensor()</code></li>
+  <li>인덱싱: [1], [:, 1]. python에서의 인덱싱과 동일하다. 처음은 포함, 마지막은 미포함.</li>
+  <li>사칙연산: <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code> ,<code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code>. Broadcasting 또는 element-wise로 이루어진다.</li>
+  <li>타입: <code class="language-plaintext highlighter-rouge">.type()</code>. 다만 알아서 type change도 해준다.</li>
+  <li>복제: <code class="language-plaintext highlighter-rouge">.clone()</code></li>
+</ul>
+
+<h3 id="shpae-조정">shpae 조정</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">len(텐서)</code> 또는 <code class="language-plaintext highlighter-rouge">.ndim</code>: rank를 반환한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">.shape</code>: shape를 반환한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">stack</code>: shape가 같은 여러개의 tensor을 쌓아서 하나의 tensor로 만든다.</li>
+  <li>타입 변화: 변화시키려고 하는 type을 메소드처럼 이용한다. ex) <code class="language-plaintext highlighter-rouge">.float()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.view</code>: tensor의 shape를 바꾼다. 인자로는 목표로 하는 shape를 파라미터로 넣는다. <code class="language-plaintext highlighter-rouge">-1</code>을 인자로 넣으면 필요한 만큼 알아서라는 뜻이 된다. 예) <code class="language-plaintext highlighter-rouge">.view(-1, 28*28)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">.unsqueeze</code>: 하나의 차원을 추가한다.</li>
+</ul>
+
+<h3 id="루프-대체">루프 대체</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.cat</code>: concatenate, 합치기</li>
+  <li><code class="language-plaintext highlighter-rouge">.mean</code>: 평균을 반환한다. 만약 0,1,2등의 인덱스가 주어질 경우, 그 axis을 가로질러서 평균을 낸다. 예를 들어 shape가 [1010, 28, 28]인 텐서에서 <code class="language-plaintext highlighter-rouge">.mean(0)</code>을 하면 [28, 28] 텐서가 반환하는 식이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">.where(condition, x, y)</code>: condition이 성립하면 x, 그렇지 않으면 y를 가지는 텐서를 반환</li>
+</ul>
+
+<h3 id="l1-norm-l2-norm-1">L1 Norm, L2 Norm</h3>
+<p>torch.nn.functional 모듈에서 구현되어 있다. Pytorch 팀에서는 torch.nn.functional을 F로 import하기를 권한다.</p>
+<ul>
+  <li>L1: <code class="language-plaintext highlighter-rouge">F.l1_loss()</code></li>
+  <li>L2: <code class="language-plaintext highlighter-rouge">F.mse_loss().sqrt()</code> (정확히 말하자면 l2 norm이 아니라 mse가 구현되어 있다.)</li>
+</ul>
+
+<h3 id="미분">미분</h3>
+<ul>
+  <li>당연히 어떤 사이즈의 텐서이건 미분 할 수 있다.</li>
+</ul>
+
+<ol>
+  <li>파라미터 텐서를 고른 후 .requires_grad_()로 설정한다.
+    <ul>
+      <li>텐서에 gradient function을 추가하는데, 여기에 우리가 어떤 연산을 할 때마다 이제 pytorch가 자동으로 함수를 추적해서 나중에 gradient를 계산할 수 있도록 한다.</li>
+      <li>여기서 메소드가 _로 끝나는 것은 우리가 실제로 텐서를 바꾸고 싶다는 의미이다.</li>
+      <li>예: <code class="language-plaintext highlighter-rouge">x = tensor(3.).requires_grad_()</code></li>
+    </ul>
+  </li>
+  <li>필요한 연산을 해서 새로운 텐서에 저장한다.
+    <ul>
+      <li>예: <code class="language-plaintext highlighter-rouge">y = x ** 2</code></li>
+    </ul>
+  </li>
+  <li>그 새로운 텐서에서 <code class="language-plaintext highlighter-rouge">.backward()</code> 메소드를 부른다. 그러면 pytorch가 gradient를 계산한다. 여기서 backward는 backpropagation을 의미한다.
+    <ul>
+      <li>예: <code class="language-plaintext highlighter-rouge">y.backward()</code></li>
+    </ul>
+  </li>
+  <li>원래 데이터 텐서에서 <code class="language-plaintext highlighter-rouge">.grad</code> 속성을 확인한다.
+    <ul>
+      <li>예: <code class="language-plaintext highlighter-rouge">x.grad</code></li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>주의</strong></p>
+<ul>
+  <li>grad가 걸려있는 텐서에 계산을 수행할때, 모델에 포함되지 않는 연산이면 .data를 이용해 수정해야 한다. 그러지 않으면 pytorch는 그 연산도 모델의 일부라고 생각한다.</li>
+</ul>
+
+<h3 id="dataset-만들기">Dataset 만들기</h3>
+<ul>
+  <li>Pytorch에서 데이터셋은 아주 구체적이고 한정적인 의미를 가지고 있다.</li>
+  <li>데이터셋은 인덱싱 되었을 때 (x,y) 튜플을 반환해야 한다.</li>
+  <li>
+    <p>구현: <code class="language-plaintext highlighter-rouge">list(zip(train_x,train_y))</code></p>
+  </li>
+  <li>array &amp; tensor</li>
+  <li>python &amp; pytorch tensor programming trics with the baseline model</li>
+  <li>L1, L2 norm</li>
+  <li>broadcasting</li>
+  <li>gradient descent</li>
+  <li>cool pytorch features</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ai" class="page__taxonomy-item" rel="tag">AI</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ai" class="page__taxonomy-item" rel="tag">ai</a><span class="sep">, </span>
+    
+      <a href="/categories/#fastai" class="page__taxonomy-item" rel="tag">fastai</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-25T00:00:00+09:00">May 25, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Fast+AI+-+Lesson+3%3A+The+Basics%20http%3A%2F%2Flocalhost%3A4000%2Fai%2Ffastai%2Ffastai-third%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fai%2Ffastai%2Ffastai-third%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fai%2Ffastai%2Ffastai-third%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/ai/fastai/fastai-second-revised/" class="pagination--pager" title="Fast AI - Lesson 2 Revised
+">Previous</a>
+    
+    
+      <a href="/general/blogwriting/" class="pagination--pager" title="개발자들을 위한 블로그 글쓰기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/links/WSL2/" rel="permalink">WSL2 and Linux
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/TIL/" rel="permalink">2022.04.30 TIL
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 내가 한 것
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/books/the-secret-life-of-programs/" rel="permalink">한 권으로 읽는 컴퓨터 구조와 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">The Secret Life of Programs: Understand Computers – Craft Better Code
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/c/c-start/" rel="permalink">C 프로그래밍 시작
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">시작이 반이다… 그런건가
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 진화하는 개발자. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

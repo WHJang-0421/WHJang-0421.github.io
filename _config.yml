@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "초보 개발자의 초보적인 블로그"
+title                    : "개발 놀이터"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "WHJang"
-description              : "시간 남을때마다 써보는 블로그"
+name                     : "진화하는 개발자"
+description              :
 url                      : "https://whjang-0421.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -94,9 +94,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "WHJang"
+  name             : "진화하는 개발자"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "점진적인 발전"
   location         :
   email            :
   links:

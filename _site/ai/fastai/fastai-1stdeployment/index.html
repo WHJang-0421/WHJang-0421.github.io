@@ -1,0 +1,711 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Fast AI - Simple Cat Classifier - 개발 놀이터</title>
+<meta name="description" content="간단한 CNN 모델 만들어보기">
+
+
+  <meta name="author" content="진화하는 개발자">
+  
+  <meta property="article:author" content="진화하는 개발자">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="개발 놀이터">
+<meta property="og:title" content="Fast AI - Simple Cat Classifier">
+<meta property="og:url" content="http://localhost:4000/ai/fastai/fastai-1stdeployment/">
+
+
+  <meta property="og:description" content="간단한 CNN 모델 만들어보기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-24T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/ai/fastai/fastai-1stdeployment/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "진화하는 개발자",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="개발 놀이터 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          개발 놀이터
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">진화하는 개발자</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>점진적인 발전</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:morrranii@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/WHJang-0421" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Fast AI - Simple Cat Classifier">
+    <meta itemprop="description" content="간단한 CNN 모델 만들어보기">
+    <meta itemprop="datePublished" content="2021-05-24T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Fast AI - Simple Cat Classifier
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h1 id="지금까지-이해한-것을-가지고-간단한-cnn-모델-고양이-분류기를-만들어보았다-5가지-고양이-종류-중에서-구분할-수-있는-모델이다">지금까지 이해한 것을 가지고 간단한 CNN 모델 (고양이 분류기)를 만들어보았다. 5가지 고양이 종류 중에서 구분할 수 있는 모델이다.</h1>
+
+<h2 id="구현-소스-및-웹사이트">구현 소스 및 웹사이트</h2>
+<ul>
+  <li>소스코드: <a href="https://github.com/WHJang-0421/cat_classification_model/tree/master">https://github.com/WHJang-0421/cat_classification_model/tree/master</a></li>
+  <li>prototyping된 웹서비스: <a href="https://mybinder.org/v2/gh/WHJang-0421/cat_classification_model/HEAD?urlpath=voila%2Frender%2Fcat-classifier.ipynb">https://mybinder.org/v2/gh/WHJang-0421/cat_classification_model/HEAD?urlpath=voila%2Frender%2Fcat-classifier.ipynb</a></li>
+</ul>
+
+<hr />
+<h2 id="기술적인-구현-관련">기술적인 구현 관련</h2>
+
+<h3 id="큰-그림">큰 그림</h3>
+<ol>
+  <li>bing image downloader을 이용하여 이미지 다운로드</li>
+  <li>Dataloaders 객체를 이용하여 전처리</li>
+  <li>Learner 이용 CNN 모델</li>
+  <li>모델을 만든 후 ImageClassifierCleaner로 데이터 정리</li>
+  <li>Confusion Matrix</li>
+  <li>모델 파일로 내보내고 jupyter app 만들기</li>
+</ol>
+
+<h3 id="dataloaders">DataLoaders</h3>
+<ul>
+  <li>dataloader 객체를 train, valid 데이터셋으로 저장해줌. dataloader 객체는 GPU로 mini_batch를 보내는 클래스.</li>
+  <li>fastai 라이브러리에서 데이터 전처리를 맡고 있음.</li>
+</ul>
+
+<p>만드는 방법)</p>
+<ol>
+  <li>생성을 위해 필요한 정보를 데이터 블록에 넣는다.
+    <ul>
+      <li>데이터의 종류: (독립변수, 종속변수)</li>
+      <li>데이터를 얻는 함수: 예를 들어 get_image_files 함수는 경로를 입력으로 받아 모든 이미지 파일의 경로를 반환한다.</li>
+      <li>레이블링을 담당하는 함수</li>
+      <li>validation set을 만드는 방법 (splitter)</li>
+      <li>item_tfms: mini_batch를 만들기 위해 데이터의 size를 동일하게 맞추어 주는 함수</li>
+    </ul>
+  </li>
+  <li>
+    <p>만든 데이터 블록 객체에 데이터의 경로를 더 알려준다. (Datablock의 .dataloaders 메소드 이용)</p>
+  </li>
+  <li>
+    <p>데이터 블록에서 데이터의 종류, 데이터를 얻는 함수 등은 대부분 factory method로 만들어져 있다. 그러나 만약 추가적 구현이 필요하다면 data block api를 이용하여 나만의 함수를 만들 수 있다.</p>
+  </li>
+  <li>.new 메소드를 이용해서 기존의 설정에서 새로운 설정을 추가한 새로운 datablock를 만들 수 있다.</li>
+</ol>
+
+<h3 id="resize-methods">Resize Methods</h3>
+<ul>
+  <li>Crop: 일부분을 (주로 중앙) 자른다. 이미지의 일부분을 잃는다는 문제점이 있다.</li>
+  <li>Squish: 말 그대로 누른다. 모양이 달라진다는 문제점이 있다.</li>
+  <li>Pad: 이미지 바깥 부분을 검은 픽셀/흰 픽셀 등으로 채운다. 패딩된 부분에서 컴퓨팅 파워가 낭비되고 나중에 이미지의 화질이 안 좋아지는 문제점이 있다.</li>
+  <li><strong>RandomResizeCrop</strong>: 가장 일반적으로 사용되는 방법. 일부분을 자르되 랜덤으로 위치와 크기를 약간씩 다르게 한다. 이를 통해 모델은 위치나 각도 같은 것이 조금 변해도 feature을 파악하는 방법을 알게 되고, 결과적으로 데이터 전체에서 이미지가 보존된다는 장점이 있다.</li>
+</ul>
+
+<h3 id="data-augmentation">Data Augmentation</h3>
+<ul>
+  <li>input data의 본질은 바꾸지 않고 그냥 돌린다던지 밝기를 바꾸던지 해서 조금 다르게 보이게 하는 것.</li>
+  <li><strong>주의사항: Data Augmentation을 통해 데이터의 labeling이 바뀌면 안됨!</strong> 예를 들어 medical data를 다룰때 data augmentation을 하면 병명이 달라질수도. 그런 결과를 낳는 data augmentation은 피해야.</li>
+  <li>fastai 라이브러리의 경우, aug_transforms로 정리</li>
+  <li>각각의 batch별로 적용하기 위해서 datablock 객체를 생성할 때 batch_tfms 인자에 넣어줌 (각각의 batch 별로 적용하는 이유: 일단 size가 같아진 다음에 augmentation을 해야 해서)</li>
+  <li>일반적으로 validation set 보다는 training set에만 사용함.</li>
+</ul>
+
+<h3 id="data-cleaning">Data Cleaning</h3>
+<ul>
+  <li>많은 데이터 과학자들은 데이터 정리에 자기 시간의 90% 이상을 쓴다고 함.</li>
+  <li>꼭 모델을 만들기 전에 데이터를 정리할 필요는 없음. 대략적인 모델을 만든 다음에 그 모델을 이용해서 데이터를 정리하는 것이 더 빠르고 편함.</li>
+</ul>
+
+<h3 id="exporting">Exporting</h3>
+<ul>
+  <li>아키텍쳐와 파라미터, 그리고 데이터의 전처리 방법을 내보내야 함.</li>
+  <li>.export() 메소드를 사용: dataloader의 속성까지 기억하므로, 데이터를 어떻게 전처리해서 모델에 집어넣을지도 다 내보냄.</li>
+  <li>.pickle 확장자</li>
+  <li>모델을 훈련시키는 것이 아니라 예측하는데 사용할때는 inference라고 부름.</li>
+</ul>
+
+<h3 id="building-apps">Building Apps</h3>
+<ul>
+  <li>Ipywidegets: Jupyter notebook에서 javascript와 ipython을 함께 사용해서 만든 GUI</li>
+  <li>Voila: jupyter notebook에서 코드는 숨기고 마크다운과 output widget만을 처리하는 주피터 기능</li>
+  <li>Binder: 주피터 노트북을 온라인 서비스로 바로 만들어주는 서비스</li>
+  <li>
+    <h2 id="prototype취미로-만드는-프로젝트-정도면-굳이-gpu를-쓸-필요는-없음-그냥-cpu로도-충분-또-굳이-엣지-컴퓨팅을-쓸-필요도-없음">prototype/취미로 만드는 프로젝트 정도면 굳이 GPU를 쓸 필요는 없음. 그냥 CPU로도 충분. 또 굳이 엣지 컴퓨팅을 쓸 필요도 없음.</h2>
+    <h2 id="느낀점">느낀점</h2>
+    <h3 id="이-모델-구현으로-얻게-된-것">이 모델 구현으로 얻게 된 것</h3>
+  </li>
+  <li>인공지능 모델을 훈련시키고 그럴듯한 GUI로 만드는 전체 과정에 대한 감을 얻었다.</li>
+  <li>jupyter notebook 내에서 git과 github를 사용했다. 뭐 노트북이라고 막 다른 것은 아니고 그냥 할 수 있음을 인식했다.</li>
+</ul>
+
+<h3 id="부족한-점">부족한 점</h3>
+<ul>
+  <li>사용한 Fastai 라이브러리와 Voila, Binder에 대한 이해가 부족하다. 특히 Voila &amp; Binder 서비스는 이용하면서 오류가 계속 나서 헥헥거렸다.</li>
+  <li>아직은 코드몽키같은 느낌으로 코드를 이해하고 있기 보다는 그냥 남이 짠 코드를 가져다가 쓰는 수준이다.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ai" class="page__taxonomy-item" rel="tag">AI</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ai" class="page__taxonomy-item" rel="tag">ai</a><span class="sep">, </span>
+    
+      <a href="/categories/#fastai" class="page__taxonomy-item" rel="tag">fastai</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-24T00:00:00+09:00">May 24, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Fast+AI+-+Simple+Cat+Classifier%20http%3A%2F%2Flocalhost%3A4000%2Fai%2Ffastai%2Ffastai-1stdeployment%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fai%2Ffastai%2Ffastai-1stdeployment%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fai%2Ffastai%2Ffastai-1stdeployment%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/ai/fastai/fastai-second/" class="pagination--pager" title="Fast AI - Lesson 2
+">Previous</a>
+    
+    
+      <a href="/ai/fastai/fastai-second-revised/" class="pagination--pager" title="Fast AI - Lesson 2 Revised
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/links/WSL2/" rel="permalink">WSL2 and Linux
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/TIL/" rel="permalink">2022.04.30 TIL
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 내가 한 것
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/books/the-secret-life-of-programs/" rel="permalink">한 권으로 읽는 컴퓨터 구조와 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">The Secret Life of Programs: Understand Computers – Craft Better Code
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/c/c-start/" rel="permalink">C 프로그래밍 시작
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">시작이 반이다… 그런건가
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 진화하는 개발자. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

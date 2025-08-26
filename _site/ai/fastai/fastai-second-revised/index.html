@@ -1,0 +1,729 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Fast AI - Lesson 2 Revised - 개발 놀이터</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="진화하는 개발자">
+  
+  <meta property="article:author" content="진화하는 개발자">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="개발 놀이터">
+<meta property="og:title" content="Fast AI - Lesson 2 Revised">
+<meta property="og:url" content="http://localhost:4000/ai/fastai/fastai-second-revised/">
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-25T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/ai/fastai/fastai-second-revised/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "진화하는 개발자",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="개발 놀이터 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          개발 놀이터
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">진화하는 개발자</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>점진적인 발전</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:morrranii@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/WHJang-0421" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Fast AI - Lesson 2 Revised">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2021-05-25T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Fast AI - Lesson 2 Revised
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#a-the-practice-of-deep-learning">A. The practice of deep learning</a><ul><li><a href="#1-starting-your-project">1) Starting your project</a></li><li><a href="#2-the-state-of-deep-learning">2) The state of deep learning</a></li><li><a href="#3-the-drivetrain-approach">3) The Drivetrain Approach</a></li></ul></li><li><a href="#b-how-to-avoid-disaster">B. How to avoid disaster</a><ul><li><a href="#handling-the-complexity">Handling the Complexity</a></li><li><a href="#unforseen-consequences-and-feedback-loops">unforseen consequences and feedback loops</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="a-the-practice-of-deep-learning">A. The practice of deep learning</h2>
+<ul>
+  <li>딥러닝의 한계와 가능성을 모두 염두에 두고 있어라. (지나친 낙관/비관 x)</li>
+</ul>
+
+<h3 id="1-starting-your-project">1) Starting your project</h3>
+<ul>
+  <li>프로젝트 접근 방법: 완벽주의 X, 일단 간단하게 만들고 나중에 발전시켜라</li>
+  <li>end-to-end, 즉 데이터 수집부터 서비스(GUI/앱)을 만들기까지의 과정을 대충 끝내고, 그 다음에 추가 학습/발전하는 과정을 여러번 반복하기. 특히 데이터셋의 접근성에 유의</li>
+  <li><strong>이 책을 학습하는 방법: 클론 코딩처럼 새로운 데이터셋을 이용하여 노트북을 처음부터 다시 만들어라</strong></li>
+  <li>초보일때는 잘 알려진 분야부터</li>
+</ul>
+
+<h3 id="2-the-state-of-deep-learning">2) The state of deep learning</h3>
+<ul>
+  <li>computer vision
+    <ul>
+      <li>(심지어는 해당 과제에 전문적으로 훈련받은) 인간 수준이다.</li>
+      <li>그러나 out-of-domain, 즉 트레이닝 데이터와 아주 약간 다른 데이터는 잘 다루지 못한다.</li>
+      <li>ex) 고양이 사진 학습 –&gt; 고양이 그림 인식 (X).</li>
+      <li>레이블링 작업이 돈이 많이 든다: Image Augmentation을 이용하면 보다 적은 레이블링으로 훈련시킬 수 있다.</li>
+    </ul>
+  </li>
+  <li>text (NLP)
+    <ul>
+      <li>텍스트 분류, 상황/맥락에 맞는 말은 잘 한다. 그러나 맞는 말은 하지 못한다. 그러니까 그럴 듯하게 들리는 헛소리를 하고 있는 것이다.</li>
+      <li>텍스트 생성은 잘 할 수 있다. GAN의 특성상 인공지능이 생성한 텍스트를 찾아내는 모델보다 텍스트 생성 모델이 항상 더 낫다.</li>
+      <li>인공지능 모델을 사용하여 구별하기 힘든 그럴듯하게 들리는 거짓 텍스트를 대량 생산하는 것은 사회적으로 악영향을 끼칠 여지가 다분히 있다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>combining text and images</p>
+  </li>
+  <li>tabular data &amp; time series
+    <ul>
+      <li>아직은 Random Forest나 Gradient Boosting등 앙상블 기법과 성능은 비슷하지만, 속도가 좀더 느리다 ㅠ</li>
+      <li>대신에 데이터 자체에 텍스트나 이미지 등을 포함할 수 있다.</li>
+    </ul>
+  </li>
+  <li>recommendation systems
+    <ul>
+      <li>그냥 독특한 종류의 tabular data이다.</li>
+      <li>high-cardinality data (사용자 ID처럼, 서로 공통점이 거의 없는 불연속적인 데이터로 이해했다)와 이미지, 텍스트, 과거 검색기록 등을 포함함 –&gt; 다양한 데이터를 혼합할때 머신러닝 이용</li>
+    </ul>
+  </li>
+  <li>other data types
+    <ul>
+      <li>일반적으로는 그냥 위에서 언급한 것들 중에 하나로 만들면 된다. ex) 소리 –&gt; 주파수로 이미지로 만들어서 분류</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-the-drivetrain-approach">3) The Drivetrain Approach</h3>
+<p><a href="https://www.oreilly.com/radar/drivetrain-approach-data-products/">Designing great data products</a>
+Drivetrain Approach는 그냥 단순히 작동하는 것이 아닌 유용한 모델을 만들기 위해서 생각해볼 것들을 정리한 것이다.</p>
+
+<p><a href="/assets/images/drivetrain-approach.png">drivetrain_approach</a></p>
+
+<p><strong>왜 모델을 만드는지 생각해보아야 한다.</strong>
+현실 세계에 모델을 적용할때는 단순히 현상을 기술하거나 예측하기 위해 모델을 만드는 것이 아니라, 뭔가 목표를 달성하기 위해 모델을 만드는 경우가 많다.</p>
+
+<p>Drivetrain Approach의 과정</p>
+
+<ol>
+  <li>목표 정하기</li>
+  <li>레버 찾기
+    <ul>
+      <li>레버는 목표를 달성하기 위해 바꿀 수 있는 것들을 의미한다.</li>
+    </ul>
+  </li>
+  <li>데이터 수집
+    <ul>
+      <li>아무 데이터나 막 수집하는 것이 아니라, 레버들이 목표에 어떤 영향을 끼치는지에 대한 정보를 담고 있는 데이터를 수집해야 한다.</li>
+    </ul>
+  </li>
+  <li>모델 만들기</li>
+</ol>
+
+<p>예시: 아마존 상품추천</p>
+
+<ol>
+  <li>목표 정하기: 장기적 매출 증가 (즉, 사용자의 구매량 증가)</li>
+  <li>레버 찾기: 상품 추천의 배열 순서</li>
+  <li>데이터 수집: 상품 추천에 따른 사용자의 구매 여부 A/B 테스팅 등을 이용</li>
+  <li>모델 만들기: 예를 들어서 추천하지 않았을때 사용자의 구매 확률과 추천했을때 사용자의 구매 확률을 예측하는 모델을 만들 수 있다.</li>
+</ol>
+
+<h2 id="b-how-to-avoid-disaster">B. How to avoid disaster</h2>
+
+<p><strong>핵심 자료: <a href="https://www.oreilly.com/library/view/building-machine-learning/9781492045106/">Building Machine Learning Powered Applications</a></strong></p>
+
+<h3 id="handling-the-complexity">Handling the Complexity</h3>
+<ul>
+  <li>뉴럴 네트워크는 너무 복잡하기 때문에, 일반적인 컴퓨터 프로그램처럼 분석적으로 이해할 수 없다.</li>
+  <li>
+    <p>문제가 되는 것들: out-of-domain data(e.g. 인터넷에 올라온 이미지와 실제 현장에서 볼 수 있는 이미지의 차이), domain shift (환경이 변함. 예를 들어 곰을 추적하는 시스템을 만들었는데, 이제 곰 대신 뱀이 나타남)</p>
+  </li>
+  <li>
+    <p>그러므로 아래 그림과 같은 방법으로 서서히 활용범위를 넓혀 나가야 한다.
+<a href="/assets/images/handling_complexity.png">Handling Complexity</a></p>
+  </li>
+  <li>모델이 의도대로 제대로 작동하고 있는지 평가할 수 있는 reporting system이 필요하고, 잘못될 수 있는 상상할 수 있는 모든 경우에 대해 이에 대응하는 reporting system이 있는지 생각해보아야 한다.</li>
+</ul>
+
+<h3 id="unforseen-consequences-and-feedback-loops">unforseen consequences and feedback loops</h3>
+<ul>
+  <li>특히 bias가 있는 환경에서, 피드백 루프를 통해 인공지능 모델이 그 bias를 증가시킬 수 있음</li>
+  <li>이러한 피드백 루프에서 빠져나갈 수 있도록 여러 안전장치들과 인간 관리 등을 추가할 수 있음.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ai" class="page__taxonomy-item" rel="tag">AI</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#ai" class="page__taxonomy-item" rel="tag">ai</a><span class="sep">, </span>
+    
+      <a href="/categories/#fastai" class="page__taxonomy-item" rel="tag">fastai</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-25T00:00:00+09:00">May 25, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Fast+AI+-+Lesson+2+Revised%20http%3A%2F%2Flocalhost%3A4000%2Fai%2Ffastai%2Ffastai-second-revised%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fai%2Ffastai%2Ffastai-second-revised%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fai%2Ffastai%2Ffastai-second-revised%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/ai/fastai/fastai-1stdeployment/" class="pagination--pager" title="Fast AI - Simple Cat Classifier
+">Previous</a>
+    
+    
+      <a href="/ai/fastai/fastai-third/" class="pagination--pager" title="Fast AI - Lesson 3: The Basics
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/links/WSL2/" rel="permalink">WSL2 and Linux
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/TIL/" rel="permalink">2022.04.30 TIL
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오늘 내가 한 것
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/books/the-secret-life-of-programs/" rel="permalink">한 권으로 읽는 컴퓨터 구조와 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">The Secret Life of Programs: Understand Computers – Craft Better Code
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/c/c-start/" rel="permalink">C 프로그래밍 시작
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">시작이 반이다… 그런건가
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 진화하는 개발자. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
