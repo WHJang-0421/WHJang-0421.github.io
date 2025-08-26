@@ -20,7 +20,11 @@ tags:
 - [Fast AI](https://course.fast.ai/)
 - 유튜브: 빵형의 개발도상국
 
-### 2. Java            
+
+### 2. Regular Expressions
+- 배운다.
+
+### 3. Java            
 
 학습 대상
 - syntax (대략적으로 감만)
